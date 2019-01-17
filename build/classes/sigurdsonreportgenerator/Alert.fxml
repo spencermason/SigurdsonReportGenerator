@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="150.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sigurdsonreportgenerator.AlertController">
+   <children>
+      <Label fx:id="Label" alignment="CENTER" layoutX="8.0" layoutY="8.0" prefHeight="122.0" prefWidth="285.0" text="Label" textAlignment="CENTER" wrapText="true" />
+   </children>
+</AnchorPane>

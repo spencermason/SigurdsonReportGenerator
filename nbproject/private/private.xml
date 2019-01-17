@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/Spenc/Documents/NetBeansProjects/SigurdsonReportGenerator/src/sigurdsonreportgenerator/Logo.png</file>
+            <file>file:/C:/Users/Spenc/Documents/NetBeansProjects/SigurdsonReportGenerator/src/sigurdsonreportgenerator/EmployeeAdapter.java</file>
+            <file>file:/C:/Users/Spenc/Documents/NetBeansProjects/SigurdsonReportGenerator/src/sigurdsonreportgenerator/AddEmployeeForm.fxml</file>
+            <file>file:/C:/Users/Spenc/Documents/NetBeansProjects/SigurdsonReportGenerator/src/sigurdsonreportgenerator/GenerateReport.fxml</file>
+            <file>file:/C:/Users/Spenc/Documents/NetBeansProjects/SigurdsonReportGenerator/nbproject/build-impl.xml</file>
+            <file>file:/C:/Users/Spenc/Documents/NetBeansProjects/SigurdsonReportGenerator/src/sigurdsonreportgenerator/AddReportTypeController.java</file>
+            <file>file:/C:/Users/Spenc/Documents/NetBeansProjects/SigurdsonReportGenerator/src/sigurdsonreportgenerator/Login.fxml</file>
+            <file>file:/C:/Users/Spenc/Documents/NetBeansProjects/SigurdsonReportGenerator/src/sigurdsonreportgenerator/LoginController.java</file>
+            <file>file:/C:/Users/Spenc/Documents/NetBeansProjects/SigurdsonReportGenerator/src/sigurdsonreportgenerator/MainForm.fxml</file>
+            <file>file:/C:/Users/Spenc/Documents/NetBeansProjects/SigurdsonReportGenerator/src/sigurdsonreportgenerator/ReportTypeAdapter.java</file>
+            <file>file:/C:/Users/Spenc/Documents/NetBeansProjects/SigurdsonReportGenerator/src/sigurdsonreportgenerator/MainFormController.java</file>
+            <file>file:/C:/Users/Spenc/Documents/NetBeansProjects/SigurdsonReportGenerator/src/sigurdsonreportgenerator/SectionAdapter.java</file>
+            <file>file:/C:/Users/Spenc/Documents/NetBeansProjects/SigurdsonReportGenerator/src/sigurdsonreportgenerator/SystemClipboard.java</file>
+            <file>file:/C:/Users/Spenc/Documents/NetBeansProjects/SigurdsonReportGenerator/src/sigurdsonreportgenerator/Alert.fxml</file>
+            <file>file:/C:/Users/Spenc/Documents/NetBeansProjects/SigurdsonReportGenerator/src/sigurdsonreportgenerator/AlertController.java</file>
+            <file>file:/C:/Users/Spenc/Documents/NetBeansProjects/SigurdsonReportGenerator/nbproject/jfx-impl.xml</file>
+            <file>file:/C:/Users/Spenc/Documents/NetBeansProjects/SigurdsonReportGenerator/src/sigurdsonreportgenerator/EditEmployeeFormController.java</file>
+            <file>file:/C:/Users/Spenc/Documents/NetBeansProjects/SigurdsonReportGenerator/src/sigurdsonreportgenerator/AddReportType.fxml</file>
+            <file>file:/C:/Users/Spenc/Documents/NetBeansProjects/SigurdsonReportGenerator/src/sigurdsonreportgenerator/SubSection.java</file>
+            <file>file:/C:/Users/Spenc/Documents/NetBeansProjects/SigurdsonReportGenerator/src/sigurdsonreportgenerator/SubSectionAdapter.java</file>
+            <file>file:/C:/Users/Spenc/Documents/NetBeansProjects/SigurdsonReportGenerator/src/sigurdsonreportgenerator/SigurdsonReportGenerator.java</file>
+            <file>file:/C:/Users/Spenc/Documents/NetBeansProjects/SigurdsonReportGenerator/src/sigurdsonreportgenerator/AddEmployeeFormController.java</file>
+            <file>file:/C:/Users/Spenc/Documents/NetBeansProjects/SigurdsonReportGenerator/src/sigurdsonreportgenerator/EditReportFormController.java</file>
+            <file>file:/C:/Users/Spenc/Documents/NetBeansProjects/SigurdsonReportGenerator/src/sigurdsonreportgenerator/Employee.java</file>
+            <file>file:/C:/Users/Spenc/Documents/NetBeansProjects/SigurdsonReportGenerator/src/sigurdsonreportgenerator/EditReportForm.fxml</file>
+            <file>file:/C:/Users/Spenc/Documents/NetBeansProjects/SigurdsonReportGenerator/src/sigurdsonreportgenerator/GenerateReportController.java</file>
+            <file>file:/C:/Users/Spenc/Documents/NetBeansProjects/SigurdsonReportGenerator/src/sigurdsonreportgenerator/EditEmployeeForm.fxml</file>
+        </group>
+    </open-files>
+</project-private>

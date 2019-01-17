@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="SigurdsonReportGenerator.jnlp">
+  <information>
+    <title>SigurdsonReportGenerator</title>
+    <vendor>Spenc</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="SigurdsonReportGenerator.jar" size="75385" download="eager" />
+    <jar href="lib\commons-io-2.6.jar" size="214788" download="eager" />
+    <jar href="lib\derby.jar" size="3104883" download="eager" />
+    <jar href="lib\docx4j-3.3.7.jar" size="5276947" download="eager" />
+    <jar href="lib\docx4j-ImportXHTML-3.3.6-1.jar" size="112902" download="eager" />
+    <jar href="lib\guava-21.0.jar" size="2521113" download="eager" />
+    <jar href="lib\slf4j-api-1.7.25.jar" size="41203" download="eager" />
+    <jar href="lib\slf4j-simple-1.7.25.jar" size="15257" download="eager" />
+    <jar href="lib\xalan-2.7.2.jar" size="3154938" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="SigurdsonReportGenerator" >
+    <param name="requiredFXVersion" value="8.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="sigurdsonreportgenerator.SigurdsonReportGenerator"  name="SigurdsonReportGenerator" />
+  <update check="always"/>
+</jnlp>

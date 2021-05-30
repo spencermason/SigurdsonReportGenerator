@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="SigurdsonReportGenerator.jar" size="75605" download="eager" />
+    <jar href="SigurdsonReportGenerator.jar" size="1214386" download="eager" />
     <jar href="lib\commons-io-2.6.jar" size="214788" download="eager" />
     <jar href="lib\derby.jar" size="3232770" download="eager" />
     <jar href="lib\docx4j-3.3.7.jar" size="5276947" download="eager" />

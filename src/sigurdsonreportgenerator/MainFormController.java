@@ -48,26 +48,37 @@ public class MainFormController implements Initializable {
     private Menu EmployeeMenu;
     @FXML
     private Menu AddReportMenu;
-    @FXML
-    private ImageView Logo;
+
     
-    public void setModel(EmployeeAdapter emp, ReportTypeAdapter rType, SectionAdapter sAdapter, SubSectionAdapter ssAdapter, Connection cn, boolean admin){
+    public void setModel(EmployeeAdapter emp, ReportTypeAdapter rType, SectionAdapter sAdapter, SubSectionAdapter ssAdapter, Connection cn, String empType){
         reportType = rType;
         sectionAdapter = sAdapter;
         subSectionAdapter = ssAdapter;
         employee = emp;
         conn = cn;
         
-        EmployeeMenu.setVisible(admin);
-        AddReportMenu.setVisible(admin);
-        EditReportMenu.setVisible(admin);
-        DatabaseMenu.setVisible(admin);
+        //Here is where we can set which menus would be available to which employee types
     }
     
     @FXML
     public void Exit(){
+        try{
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Login.fxml"));
+        Parent login = (Parent) loader.load();
+
+        Scene scene = new Scene(login);
         Stage stage = (Stage) mainMenu.getScene().getWindow();
         stage.close();
+
+        stage = new Stage();
+        stage.setScene(scene);
+        stage.setTitle("Login");
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.showAndWait();
+        }
+        catch(IOException ex){
+            displayAlert(ex.getMessage());
+        }
     }
         
     @FXML

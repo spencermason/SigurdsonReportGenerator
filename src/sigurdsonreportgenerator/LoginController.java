@@ -23,6 +23,8 @@ import javafx.stage.Stage;
 import javafx.scene.control.TextField;
 import javafx.fxml.FXML;
 import javafx.event.EventHandler;
+import javafx.stage.WindowEvent;
+import javafx.scene.Node;
 
 /**
  * FXML Controller class
@@ -85,27 +87,46 @@ public class LoginController implements Initializable {
         
         if (employeeAdapter.CheckCredentials(UsernameField.getText(), PasswordField.getText())){
             
-            boolean admin;
             Employee emp = employeeAdapter.getEmployee(UsernameField.getText());
             
-            if (emp.Type.equals("Administrator")){
-                admin = true;
-            }
-            else{
-                admin = false;
-            }
             
             FXMLLoader loader = new FXMLLoader(getClass().getResource("MainForm.fxml"));
-            Parent ERROR = (Parent) loader.load();
+            Parent mainMenu = (Parent) loader.load();
             MainFormController controller = (MainFormController) loader.getController();
 
-            controller.setModel(employeeAdapter, reportTypeAdapter,sectionAdapter, subSectionAdapter, conn, admin);
+            controller.setModel(employeeAdapter, reportTypeAdapter,sectionAdapter, subSectionAdapter, conn, emp.Type);
 
-            Scene scene = new Scene(ERROR);
-            Stage stage = new Stage();
+            Stage stage = (Stage) UsernameField.getScene().getWindow();
+            stage.close();
+            
+            stage = new Stage();
+            Scene scene = new Scene(mainMenu);
             stage.setScene(scene);
             stage.setTitle("Main Menu");
             stage.initModality(Modality.APPLICATION_MODAL);
+            stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+                @Override
+                public void handle(WindowEvent e) {
+                    try{
+
+                        
+                        Stage stage = (Stage) e.getSource();
+                        stage.close();
+                        FXMLLoader loader = new FXMLLoader(getClass().getResource("Login.fxml"));
+                        Parent login = (Parent) loader.load();
+                        stage = new Stage();
+                        Scene scene = new Scene(login);
+                        stage.setScene(scene);
+                        stage.setTitle("Login");
+                        stage.initModality(Modality.APPLICATION_MODAL);
+                        stage.show();}
+                    
+                    catch(IOException ex){
+                        displayAlert(ex.getMessage());
+                    }
+                }
+            });
+                    
             stage.showAndWait();
         }
         else{
@@ -149,49 +170,14 @@ public class LoginController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         setOnEnterEvents();
 
-        
-                
-//        
-//        
-//		// Create a variable for the connection string.
-//		String connectionUrl = "jdbc:sqlserver://localhost:1433;" +
-//			"databaseName=TestDatabase;integratedSecurity=true;";
-//
-//		// Declare the JDBC objects.
-//		Connection conn = null;
-//		Statement stmt = null;
-//		ResultSet rs = null;
-//		
-//        	try {
-//        		// Establish the connection.
-//        		Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-//            		conn = DriverManager.getConnection(connectionUrl);
-//        	}
-//        
-//		// Handle any errors that may have occurred.
-//		catch (Exception e) {
-//			e.printStackTrace();
-//		}
-//
-//		finally {
-//			if (rs != null) try { rs.close(); } catch(Exception e) {}
-//	    		if (stmt != null) try { stmt.close(); } catch(Exception e) {}
-//	    		if (conn != null) try { conn.close(); } catch(Exception e) {}
 //                }
 
         try{
-           // Class.forName(jdbcDriver).newInstance();
         }
         catch(Exception err){};
         
         
                 try {
-            // Create a named constant for the URL
-            // NOTE: This value is specific for Java DB
-            //String DB_URL = "Server=localhost\\SQLEXPRESS;Database=master;Trusted_Connection=True;";
-
-            //String DB_URL = "jdbc:derby:SigurdsonReportGenerator;create=true";
-            //DB_URL = "jdbc:google:mysql://psychologymatters-srg:northamerica-northeast1:srg-sql/SigurdsonReportGenerator;create=true";
             Class.forName("com.mysql.cj.jdbc.Driver");
             String dburl= String.format("jdbc:mysql://34.152.1.76:3306/SigurdsonReportGenerator");
             conn = DriverManager.getConnection(dburl, "root", "psychoed");

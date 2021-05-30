@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.lang.ClassNotFoundException;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
 import java.sql.Connection;
@@ -188,11 +189,20 @@ public class LoginController implements Initializable {
             // Create a named constant for the URL
             // NOTE: This value is specific for Java DB
             //String DB_URL = "Server=localhost\\SQLEXPRESS;Database=master;Trusted_Connection=True;";
-            String DB_URL = "jdbc:derby:SigurdsonReportGenerator;create=true";
+
+            //String DB_URL = "jdbc:derby:SigurdsonReportGenerator;create=true";
+            //DB_URL = "jdbc:google:mysql://psychologymatters-srg:northamerica-northeast1:srg-sql/SigurdsonReportGenerator;create=true";
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            String dburl= String.format("jdbc:mysql://34.152.1.76:3306/SigurdsonReportGenerator");
+            conn = DriverManager.getConnection(dburl, "root", "psychoed");
+            
             // Create a connection to the database
-            conn = DriverManager.getConnection(DB_URL);
+            //conn = DriverManager.getConnection(DB_URL);
 
         } catch (SQLException ex) {
+            displayAlert(ex.getMessage());
+        }
+        catch (ClassNotFoundException ex){
             displayAlert(ex.getMessage());
         }
     }

@@ -10,23 +10,23 @@
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="800.0" styleClass="background" stylesheets="@../styles/styles.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sigurdsonreportgenerator.EditReportFormController">
    <children>
-      <ComboBox fx:id="TypeBox" layoutX="73.0" layoutY="55.0" onAction="#TypeChange" prefHeight="31.0" prefWidth="185.0" promptText="Select Report Type" visibleRowCount="20" />
-      <ComboBox fx:id="SectionBox" layoutX="308.0" layoutY="55.0" onAction="#SectionChange" prefWidth="185.0" promptText="Select Section" visibleRowCount="20" />
+      <ComboBox fx:id="TypeBox" layoutX="73.0" layoutY="55.0" onAction="#TypeChange" prefWidth="185.0" promptText="Select Report Type" styleClass="combobox" visibleRowCount="20" />
+      <ComboBox fx:id="SectionBox" layoutX="308.0" layoutY="55.0" onAction="#SectionChange" prefWidth="185.0" promptText="Select Section" styleClass="combobox" visibleRowCount="20" />
       <TextField fx:id="SectionField" layoutX="308.0" layoutY="85.0" prefHeight="31.0" prefWidth="185.0" promptText="Enter section name" />
-      <ComboBox fx:id="SubSectionBox" layoutX="543.0" layoutY="55.0" onAction="#SubSectionChange" prefWidth="185.0" promptText="Select Sub-Section" visibleRowCount="20" />
-      <Button fx:id="CancelBtn" layoutX="664.0" layoutY="349.0" mnemonicParsing="false" onAction="#Exit" styleClass="buttonGeneral" text="Cancel" />
-      <Button fx:id="OkBtn" layoutX="593.0" layoutY="349.0" mnemonicParsing="false" onAction="#Okay" styleClass="buttonGeneral" text="Ok" />
-      <ComboBox fx:id="InsertAt" layoutX="308.0" layoutY="115.0" prefWidth="185.0" promptText="Insert At Position" visibleRowCount="20" />
+      <ComboBox fx:id="SubSectionBox" layoutX="543.0" layoutY="55.0" onAction="#SubSectionChange" prefWidth="185.0" promptText="Select Sub-Section" styleClass="combobox" visibleRowCount="20" />
+      <Button fx:id="CancelBtn" layoutX="675.0" layoutY="340.0" mnemonicParsing="false" onAction="#Exit" prefHeight="40.0" prefWidth="80.0" styleClass="buttonGeneral" text="Cancel" />
+      <Button fx:id="OkBtn" layoutX="584.0" layoutY="340.0" mnemonicParsing="false" onAction="#Okay" prefHeight="40.0" prefWidth="80.0" styleClass="buttonGeneral" text="Ok" />
+      <ComboBox fx:id="InsertAt" layoutX="308.0" layoutY="115.0" prefWidth="185.0" promptText="Insert At Position" styleClass="combobox" visibleRowCount="20" />
       <TextField fx:id="SubSectionField" layoutX="543.0" layoutY="85.0" prefHeight="31.0" prefWidth="185.0" promptText="Enter sub-section name" />
-      <ComboBox fx:id="InsertAt2" layoutX="543.0" layoutY="115.0" prefWidth="185.0" promptText="Insert At Position" visibleRowCount="20" />
+      <ComboBox fx:id="InsertAt2" layoutX="543.0" layoutY="115.0" prefWidth="185.0" promptText="Insert At Position" styleClass="combobox" visibleRowCount="20" />
       <TextArea fx:id="TextArea" layoutX="26.0" layoutY="165.0" prefHeight="164.0" prefWidth="751.0" promptText="Enter Sub Section Text" wrapText="true" />
-      <CheckBox fx:id="TypeCheckBox" layoutX="73.0" layoutY="34.0" mnemonicParsing="false" onAction="#updateControls" text="Change Type Name" />
-      <CheckBox fx:id="SectionCheckBox" layoutX="308.0" layoutY="34.0" mnemonicParsing="false" onAction="#updateControls" text="Change Section Name" />
-      <CheckBox fx:id="SubSectionCheckBox" layoutX="543.0" layoutY="34.0" mnemonicParsing="false" onAction="#updateControls" text="Change Sub-Section Name" />
+      <CheckBox fx:id="TypeCheckBox" layoutX="73.0" layoutY="34.0" mnemonicParsing="false" onAction="#updateControls" styleClass="mainText" text="Change Type Name" />
+      <CheckBox fx:id="SectionCheckBox" layoutX="308.0" layoutY="34.0" mnemonicParsing="false" onAction="#updateControls" styleClass="mainText" text="Change Section Name" />
+      <CheckBox fx:id="SubSectionCheckBox" layoutX="543.0" layoutY="34.0" mnemonicParsing="false" onAction="#updateControls" styleClass="mainText" text="Change Sub-Section Name" />
       <TextField fx:id="TypeField" layoutX="73.0" layoutY="84.0" prefHeight="31.0" prefWidth="185.0" promptText="Enter type name" />
-      <ComboBox fx:id="ExistingSectionBox" layoutX="308.0" layoutY="85.0" onAction="#SectionChange" prefWidth="185.0" promptText="Select Section" visibleRowCount="20" />
-      <ComboBox fx:id="ExistingSubSectionBox" layoutX="543.0" layoutY="85.0" onAction="#ExistingSubSectionChange" prefWidth="185.0" promptText="Select Sub-Section" visibleRowCount="20" />
-      <Button fx:id="DeleteBtn" layoutX="493.0" layoutY="349.0" mnemonicParsing="false" onAction="#delete" styleClass="buttonGeneral" text="Delete" />
+      <ComboBox fx:id="ExistingSectionBox" layoutX="308.0" layoutY="85.0" onAction="#SectionChange" prefWidth="185.0" promptText="Select Section" styleClass="combobox" visibleRowCount="20" />
+      <ComboBox fx:id="ExistingSubSectionBox" layoutX="543.0" layoutY="85.0" onAction="#ExistingSubSectionChange" prefWidth="185.0" promptText="Select Sub-Section" styleClass="combobox" visibleRowCount="20" />
+      <Button fx:id="DeleteBtn" layoutX="493.0" layoutY="340.0" mnemonicParsing="false" onAction="#delete" prefHeight="40.0" prefWidth="80.0" styleClass="buttonGeneral" text="Delete" />
       <Label layoutX="27.0" layoutY="329.0" styleClass="mainText" text="Put a * in front of text if you would like it to be part of a numbered list" />
    </children>
 </AnchorPane>

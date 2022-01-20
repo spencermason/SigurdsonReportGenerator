@@ -38,5 +38,7 @@
             <Image url="@../images/PsychMatters_Logo_05_Black_Vert_Stacked%5B1642%5D.png" />
          </image>
       </ImageView>
+      <Button fx:id="AddEmployee" layoutX="200.0" layoutY="346.0" mnemonicParsing="false" onAction="#addEmployee" prefHeight="40.0" prefWidth="100.0" styleClass="buttonGeneral" text="Add Employee" />
+      <Button fx:id="EditEmployee" layoutX="353.0" layoutY="346.0" mnemonicParsing="false" onAction="#editEmployee" prefHeight="40.0" prefWidth="100.0" styleClass="buttonGeneral" text="Edit Employee" />
    </children>
 </AnchorPane>

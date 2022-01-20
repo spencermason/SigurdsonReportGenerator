@@ -1,0 +1,80 @@
+.buttonGeneral{
+    -fx-background-color: #25313E;
+    -fx-font-family: Calibri;
+    -fx-font-weight: bold;
+    -fx-text-fill: #FFFFFF;
+    -fx-border-color: #25313E;
+    -fx-border-width: 0;
+    
+}
+.buttonGeneral:pressed{
+    -fx-border-width: 2;
+}
+
+.buttonGeneral:hover{
+    -fx-background-color: #808080;
+}
+
+.background{
+    -fx-background-color:  #78aa94;
+    -fx-border-color: #25313E;
+    -fx-border-width: 2;
+}
+
+.mainText{
+    -fx-text-fill: #25313E;
+    -fx-font-family: Calibri;
+    -fx-font-weight: bold;
+}
+
+.button1{
+    -fx-background-color:  #90AB6F;
+    -fx-font-family: Calibri;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 27;
+    -fx-border-width: 0;
+    -fx-border-color: #25313E;
+}
+.button1:pressed{
+    -fx-border-width: 2;
+}
+.button1:hover{
+    -fx-background-color:  #c0cfaf;
+}
+
+.button2{
+    -fx-background-color:  #C6AC76;
+    -fx-font-family: Calibri;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 27;
+    -fx-border-width: 0;
+    -fx-border-color: #25313E;
+}
+.button2:pressed{
+    -fx-border-width: 2;
+}
+.button2:hover{
+    -fx-background-color:  #d9c9a5;
+}
+
+.button3{
+    -fx-background-color:  #C07A5A;
+    -fx-font-family: Calibri;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 27;
+    -fx-border-width: 0;
+    -fx-border-color: #25313E;
+}
+.button3:pressed{
+    -fx-border-width: 2;
+}
+.button3:hover{
+    -fx-background-color:  #d5a690;
+}
+
+.combobox .cell{
+    -fx-text-fill: #FFFFFF;
+    -fx-background-color:  #25313E;
+    -fx-font-family: Calibri;
+    -fx-font-weight: bold;
+}

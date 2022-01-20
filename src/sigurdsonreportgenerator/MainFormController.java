@@ -22,7 +22,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.MenuBar;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.scene.control.Menu;
+import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 
 /**
@@ -39,15 +39,10 @@ public class MainFormController implements Initializable {
     private Connection conn;
 
     @FXML
-    private MenuBar mainMenu;
+    private Button AddEmployee;
     @FXML
-    private Menu DatabaseMenu;
-    @FXML
-    private Menu EditReportMenu;
-    @FXML
-    private Menu EmployeeMenu;
-    @FXML
-    private Menu AddReportMenu;
+    private Button EditEmployee;
+
 
     
     public void setModel(EmployeeAdapter emp, ReportTypeAdapter rType, SectionAdapter sAdapter, SubSectionAdapter ssAdapter, Connection cn, String empType){
@@ -56,8 +51,14 @@ public class MainFormController implements Initializable {
         subSectionAdapter = ssAdapter;
         employee = emp;
         conn = cn;
-        
-        //Here is where we can set which menus would be available to which employee types
+        if (empType.equals("Administrator")){
+            AddEmployee.setVisible(true);
+            EditEmployee.setVisible(true);
+        }
+        else{
+            AddEmployee.setVisible(false);
+            EditEmployee.setVisible(false);
+        }
     }
     
     @FXML
@@ -67,7 +68,7 @@ public class MainFormController implements Initializable {
         Parent login = (Parent) loader.load();
 
         Scene scene = new Scene(login);
-        Stage stage = (Stage) mainMenu.getScene().getWindow();
+        Stage stage = (Stage) AddEmployee.getScene().getWindow();
         stage.close();
 
         stage = new Stage();
@@ -89,7 +90,7 @@ public class MainFormController implements Initializable {
         subSectionAdapter = new SubSectionAdapter(conn, true);
         employee = new EmployeeAdapter(conn, true);
         
-        Employee admin = new Employee("Lara Sigurdson", "lsigurdson", "psychoed", "Administrator", LocalDate.now());
+        Employee admin = new Employee("Lara Sigurdson", "lsigurdson", "Spence4mum", "Administrator", LocalDate.now());
         employee.AddEmployee(admin);
         
         displayAlert("Databases Reset");

@@ -53,8 +53,11 @@ public class LoginController implements Initializable {
        try{
            Ok();
        }
-       catch (Exception ex){
-           displayAlert("Database error, most likely required to enter password for first time set up");   
+       catch (SQLException ex){
+           displayAlert(ex.getMessage());
+       }
+       catch (IOException ex){
+           displayAlert(ex.getMessage());
        }
    }
    
@@ -66,11 +69,11 @@ public class LoginController implements Initializable {
         subSectionAdapter = new SubSectionAdapter(conn, true);
         employeeAdapter = new EmployeeAdapter(conn, true);
         
-        Employee admin = new Employee("Lara Sigurdson", "lsigurdson", "psychoed", "Administrator", LocalDate.now());
+        Employee admin = new Employee("Lara Sigurdson", "lsigurdson", "Spence4mum", "Administrator", LocalDate.now());
         employeeAdapter.AddEmployee(admin);
    }
    
-    public void Ok() throws Exception{
+    public void Ok() throws SQLException, IOException{
         
         if (UsernameField.getText().equals("initialize") && PasswordField.getText().equals("password")){
             createDatabase();

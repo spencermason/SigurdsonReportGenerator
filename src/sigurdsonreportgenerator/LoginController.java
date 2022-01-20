@@ -14,7 +14,11 @@ import java.lang.ClassNotFoundException;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
 import java.sql.Connection;
+import java.sql.DatabaseMetaData;
+import java.sql.ResultSet;
 import java.time.LocalDate;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -40,8 +44,6 @@ public class LoginController implements Initializable {
    private Employee employee;
    private Connection conn;
    
-   private static final String jdbcDriver = "com.microsoft.sqlserver.jdbc.SQLServerDriver"; //Think I need to use an older driver
-   private static final String jdbcURL = "jdbc:sqlserver://localhost:1433;databasename=AdventureWorksDW2014;integratedSecurity=true;";
    
    @FXML
    public TextField UsernameField;
@@ -69,22 +71,18 @@ public class LoginController implements Initializable {
         subSectionAdapter = new SubSectionAdapter(conn, true);
         employeeAdapter = new EmployeeAdapter(conn, true);
         
-        Employee admin = new Employee("Lara Sigurdson", "lsigurdson", "Spence4mum", "Administrator", LocalDate.now());
+        Employee admin = new Employee("default", "user", "123", "Administrator", LocalDate.now());
         employeeAdapter.AddEmployee(admin);
    }
    
     public void Ok() throws SQLException, IOException{
         
-        if (UsernameField.getText().equals("initialize") && PasswordField.getText().equals("password")){
-            createDatabase();
-            displayAlert("Database initialized please enter administrator username and password to continue");
-        }
-        else{
-            reportTypeAdapter = new ReportTypeAdapter(conn, false);
-            sectionAdapter = new SectionAdapter(conn, false);
-            subSectionAdapter = new SubSectionAdapter(conn, false);
-            employeeAdapter = new EmployeeAdapter(conn, false);
-        }
+        
+        
+        reportTypeAdapter = new ReportTypeAdapter(conn, false);
+        sectionAdapter = new SectionAdapter(conn, false);
+        subSectionAdapter = new SubSectionAdapter(conn, false);
+        employeeAdapter = new EmployeeAdapter(conn, false);
 
 
         
@@ -171,9 +169,12 @@ public class LoginController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        LocalDate expiry = LocalDate.parse("2022-02-01");
+        if (LocalDate.now().isAfter(expiry)){
+            displayAlert("Trial has expired");
+            System.exit(0);
+        }
         setOnEnterEvents();
-
-//                }
 
         try{
         }
@@ -181,19 +182,26 @@ public class LoginController implements Initializable {
         
         
                 try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            String dburl= String.format("jdbc:mysql://34.152.1.76:3306/SigurdsonReportGenerator");
-            conn = DriverManager.getConnection(dburl, "root", "psychoed");
+            conn = DriverManager.getConnection("jdbc:derby://localhost:1527/local","username","password");
             
-            // Create a connection to the database
-            //conn = DriverManager.getConnection(DB_URL);
 
         } catch (SQLException ex) {
             displayAlert(ex.getMessage());
         }
-        catch (ClassNotFoundException ex){
-            displayAlert(ex.getMessage());
+                
+        DatabaseMetaData dbmd;
+       try {
+           dbmd = conn.getMetaData();
+            ResultSet rs = dbmd.getTables(null, null, "EMPLOYEES", null);
+            if (!rs.next()){
+                createDatabase();
+                displayAlert("local database initialized, log in with username:user password:123");
         }
+       } catch (SQLException ex) {
+           Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
+       }
+
+        
     }
     
     private void displayAlert(String msg) {

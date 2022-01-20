@@ -8,9 +8,11 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="SigurdsonReportGenerator.jar" size="1214386" download="eager" />
+    <jar href="SigurdsonReportGenerator.jar" size="646136" download="eager" />
     <jar href="lib\commons-io-2.6.jar" size="214788" download="eager" />
-    <jar href="lib\derby.jar" size="3232770" download="eager" />
+    <jar href="lib\derby.jar" size="3104883" download="eager" />
+    <jar href="lib\derbyclient.jar" size="585704" download="eager" />
+    <jar href="lib\derbynet.jar" size="266471" download="eager" />
     <jar href="lib\docx4j-3.3.7.jar" size="5276947" download="eager" />
     <jar href="lib\docx4j-ImportXHTML-3.3.6-1.jar" size="112902" download="eager" />
     <jar href="lib\guava-21.0.jar" size="2521113" download="eager" />

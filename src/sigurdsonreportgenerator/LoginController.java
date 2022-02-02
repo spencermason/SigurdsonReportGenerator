@@ -169,7 +169,7 @@ public class LoginController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        LocalDate expiry = LocalDate.parse("2022-02-01");
+        LocalDate expiry = LocalDate.parse("2022-02-16");
         if (LocalDate.now().isAfter(expiry)){
             displayAlert("Trial has expired");
             System.exit(0);
@@ -182,7 +182,10 @@ public class LoginController implements Initializable {
         
         
                 try {
-            conn = DriverManager.getConnection("jdbc:derby://localhost:1527/local","username","password");
+            //conn = DriverManager.getConnection("jdbc:derby://localhost:1527/local","username","password");
+            String DB_URL = "jdbc:derby:TrialDatabase;create=true";
+            // Create a connection to the database
+            conn = DriverManager.getConnection(DB_URL);
             
 
         } catch (SQLException ex) {
